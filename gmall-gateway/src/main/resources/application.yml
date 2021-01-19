@@ -1,0 +1,29 @@
+server:
+  port: 9999
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: pms-service
+          uri: lb://gmall-pms
+          predicates:
+            - Path=/pms/**
+        - id: sms-service
+          uri: lb://gmall-sms
+          predicates:
+            - Path=/sms/**
+        - id: oms-service
+          uri: lb://gmall-oms
+          predicates:
+            - Path=/oms/**
+        - id: wms-service
+          uri: lb://gmall-wms
+          predicates:
+            - Path=/wms/**
+        - id: ums-service
+          uri: lb://gmall-ums
+          predicates:
+            - Path=/ums/**

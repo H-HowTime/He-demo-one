@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gmall-wms
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 844dff5e-60cb-4b90-b198-85a337ac986e
+        group: dev
+        file-extension: yml
