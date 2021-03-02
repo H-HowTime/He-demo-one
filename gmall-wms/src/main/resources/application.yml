@@ -14,7 +14,7 @@ spring:
     port: 6379
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.230.128:3306/guli_wms
+    url: jdbc:mysql://192.168.230.128:3306/guli_wms?useSSL=false
     username: root
     password: 123456Abc@
   sleuth:
@@ -25,6 +25,19 @@ spring:
     discovery-client-enabled: false
     sender:
       type: web
+  rabbitmq:
+    host: 192.168.230.128
+    port: 5672
+    virtual-host: /hehao
+    username: hexhao
+    password: hexhao
+    listener:
+      simple:
+        prefetch: 1
+        acknowledge-mode: manual
+        concurrency: 8
+    publisher-confirm-type: correlated
+    publisher-returns: true
 mybatis-plus:
   mapper-locations: classpath:mapper/wms/**/*.xml
   type-aliases-package: com.atguigu.gmall.wms.entity

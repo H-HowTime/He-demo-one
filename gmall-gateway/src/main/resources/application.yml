@@ -27,3 +27,48 @@ spring:
           uri: lb://gmall-ums
           predicates:
             - Path=/ums/**
+        - id: index-service0
+          uri: lb://gmall-index
+          predicates:
+            - Path=/index/**
+        - id: index-service1
+          uri: lb://gmall-index
+          predicates:
+            - Host=www.gmall.com, gmall.com
+#          filters:
+#            - AddResponseHeader=xxxx, yyyy, zzz, kkkk
+#            - Auth=/zzz, /hhhh, /jjj/zzz
+        - id: search-service
+          uri: lb://gmall-search
+          predicates:
+            - Host=search.gmall.com #使用域名进行断言匹配
+        - id: item-service
+          uri: lb://gmall-item
+          predicates:
+            - Host=item.gmall.com #使用域名进行断言匹配
+        - id: auth-service
+          uri: lb://gmall-auth
+          predicates:
+            - Host=sso.gmall.com #使用域名进行断言匹配
+        - id: cart-service
+          uri: lb://gmall-cart
+          predicates:
+            - Host=cart.gmall.com #使用域名进行断言匹配
+        - id: order-service
+          uri: lb://gmall-order
+          predicates:
+            - Host=order.gmall.com #使用域名进行断言匹配
+          filters:
+            - Auth=/
+        - id: payment-service1
+          uri: lb://gmall-payment
+          predicates:
+            - Host=payment.gmall.com #使用域名进行断言匹配
+          filters:
+            - Auth=/
+        - id: payment-service2
+          uri: lb://gmall-payment
+          predicates:
+            - Path=/pay/** #为支付成功的异步回调设置路径路由
+
+

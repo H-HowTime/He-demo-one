@@ -1,0 +1,267 @@
+
+
+{
+  "name": "8848钛金手机",
+  "brandId": 5,
+  "categoryId": 225,
+  "publishStatus": 1,
+  "spuImages": [
+    "https://hehao-gmall.oss-cn-shanghai.aliyuncs.com/2021-01-20/408cf5e1-1375-4fb7-8d7a-57eedbadc370_1a9caef897a0f9a9.jpg"
+  ],
+  "baseAttrs": [
+    {
+      "attrId": 1,
+      "attrName": "上市年份",
+      "valueSelected": [
+        "2021"
+      ]
+    },
+    {
+      "attrId": 2,
+      "attrName": "产品名称",
+      "valueSelected": [
+        "8848"
+      ]
+    },
+    {
+      "attrId": 10,
+      "attrName": "上市月份",
+      "valueSelected": [
+        "3月"
+      ]
+    },
+    {
+      "attrId": 6,
+      "attrName": "CPU品牌",
+      "valueSelected": [
+        "麒麟"
+      ]
+    },
+    {
+      "attrId": 7,
+      "attrName": "CPU型号",
+      "valueSelected": [
+        "麒麟990 5G"
+      ]
+    },
+    {
+      "attrId": 8,
+      "attrName": "分辨率",
+      "valueSelected": [
+        "FHD+ 2340×1080 像素"
+      ]
+    },
+    {
+      "attrId": 9,
+      "attrName": "屏幕尺寸",
+      "valueSelected": [
+        "6"
+      ]
+    },
+    {
+      "attrId": 11,
+      "attrName": "65w快充",
+      "valueSelected": [
+        "是"
+      ]
+    }
+  ],
+  "skus": [
+    {
+      "attr_3": "黑色",
+      "name_3": "机身颜色",
+      "price": "6199",
+      "stock": 0,
+      "growBounds": "2000",
+      "buyBounds": "15000",
+      "work": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "fullCount": "3",
+      "discount": "85",
+      "fullPrice": "6200",
+      "reducePrice": "500",
+      "fullAddOther": 1,
+      "images": [
+        "https://hehao-gmall.oss-cn-shanghai.aliyuncs.com/2021-01-20/547c3aa6-dcfd-4088-82c3-e088fd4b880e_f43db9e811f24467d58d06f49f5b72a1.jpg"
+      ],
+      "name": "8848钛金手机 黑色,8G,256G",
+      "title": "8848钛金手机 黑色,8G,256G 支持移动联通电信5G 双卡双待手机",
+      "subTitle": "8848钛金手机 黑色,8G,256G",
+      "weight": "500",
+      "attr_4": "8G",
+      "name_4": "运行内存",
+      "attr_5": "256G",
+      "name_5": "机身存储",
+      "ladderAddOther": 1,
+      "subtitle": "【自我再飞跃】值享焕新版超值权益：1.未来折抵半价换新，至高再返1123元；2.原厂AC+延保不怕意外损坏；3.享12期白条免息！抢购查",
+      "saleAttrs": [
+        {
+          "attrId": "3",
+          "attrName": "机身颜色",
+          "attrValue": "黑色"
+        },
+        {
+          "attrId": "4",
+          "attrName": "运行内存",
+          "attrValue": "8G"
+        },
+        {
+          "attrId": "5",
+          "attrName": "机身存储",
+          "attrValue": "256G"
+        }
+      ]
+    },
+    {
+      "attr_3": "黑色",
+      "name_3": "机身颜色",
+      "price": "5499",
+      "stock": 0,
+      "growBounds": "1500",
+      "buyBounds": "1200",
+      "work": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "fullCount": "3",
+      "discount": "85",
+      "fullPrice": "5500",
+      "reducePrice": "200",
+      "fullAddOther": 1,
+      "images": [
+        "https://hehao-gmall.oss-cn-shanghai.aliyuncs.com/2021-01-20/32a4c00e-7d83-4ee1-869f-aeb07f48a000_661c6fe2073f96861b126f080adfb57e.jpeg"
+      ],
+      "name": "8848钛金手机 黑色,8G,128G",
+      "title": "8848钛金手机 黑色,8G,128G 支持移动联通电信5G 双卡双待手机",
+      "subTitle": "8848钛金手机 黑色,8G,128G",
+      "weight": "450",
+      "attr_4": "8G",
+      "name_4": "运行内存",
+      "attr_5": "128G",
+      "name_5": "机身存储",
+      "ladderAddOther": 1,
+      "subtitle": "【自我再飞跃】值享焕新版超值权益：1.未来折抵半价换新，至高再返1123元；2.原厂AC+延保不怕意外损坏；3.享12期白条免息！抢购查",
+      "saleAttrs": [
+        {
+          "attrId": "3",
+          "attrName": "机身颜色",
+          "attrValue": "黑色"
+        },
+        {
+          "attrId": "4",
+          "attrName": "运行内存",
+          "attrValue": "8G"
+        },
+        {
+          "attrId": "5",
+          "attrName": "机身存储",
+          "attrValue": "128G"
+        }
+      ]
+    },
+    {
+      "attr_3": "白色",
+      "name_3": "机身颜色",
+      "price": "6199",
+      "stock": 0,
+      "growBounds": "2000",
+      "buyBounds": "1500",
+      "work": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "fullCount": "3",
+      "discount": "85",
+      "fullPrice": "6200",
+      "reducePrice": "500",
+      "fullAddOther": 1,
+      "images": [
+        "https://hehao-gmall.oss-cn-shanghai.aliyuncs.com/2021-01-20/dc21e73a-62cd-4eae-8b64-b8d72f47a4c3_f43db9e811f24467d58d06f49f5b72a1.jpg"
+      ],
+      "name": "8848钛金手机 白色,8G,256G",
+      "title": "8848钛金手机 白色,8G,256G 支持移动联通电信5G 双卡双待手机",
+      "subTitle": "8848钛金手机 白色,8G,256G",
+      "weight": "500",
+      "attr_4": "8G",
+      "name_4": "运行内存",
+      "attr_5": "256G",
+      "name_5": "机身存储",
+      "ladderAddOther": 1,
+      "subtitle": "【自我再飞跃】值享焕新版超值权益：1.未来折抵半价换新，至高再返1123元；2.原厂AC+延保不怕意外损坏；3.享12期白条免息！抢购查",
+      "saleAttrs": [
+        {
+          "attrId": "3",
+          "attrName": "机身颜色",
+          "attrValue": "白色"
+        },
+        {
+          "attrId": "4",
+          "attrName": "运行内存",
+          "attrValue": "8G"
+        },
+        {
+          "attrId": "5",
+          "attrName": "机身存储",
+          "attrValue": "256G"
+        }
+      ]
+    },
+    {
+      "attr_3": "白色",
+      "name_3": "机身颜色",
+      "price": "5499",
+      "stock": 0,
+      "growBounds": "1500",
+      "buyBounds": "1000",
+      "work": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "fullCount": "3",
+      "discount": "85",
+      "fullPrice": "5500",
+      "reducePrice": "200",
+      "fullAddOther": 1,
+      "images": [
+        "https://hehao-gmall.oss-cn-shanghai.aliyuncs.com/2021-01-20/3e533ebc-8c2b-4b81-82d1-bdcbb83a74f2_661c6fe2073f96861b126f080adfb57e.jpeg"
+      ],
+      "name": "8848钛金手机 白色,8G,128G",
+      "title": "8848钛金手机 白色,8G,128G 支持移动联通电信5G 双卡双待手机",
+      "subTitle": "8848钛金手机 白色,8G,128G",
+      "weight": "450",
+      "attr_4": "8G",
+      "name_4": "运行内存",
+      "attr_5": "128G",
+      "name_5": "机身存储",
+      "ladderAddOther": 1,
+      "subtitle": "【自我再飞跃】值享焕新版超值权益：1.未来折抵半价换新，至高再返1123元；2.原厂AC+延保不怕意外损坏；3.享12期白条免息！抢购查",
+      "saleAttrs": [
+        {
+          "attrId": "3",
+          "attrName": "机身颜色",
+          "attrValue": "白色"
+        },
+        {
+          "attrId": "4",
+          "attrName": "运行内存",
+          "attrValue": "8G"
+        },
+        {
+          "attrId": "5",
+          "attrName": "机身存储",
+          "attrValue": "128G"
+        }
+      ]
+    }
+  ]
+}

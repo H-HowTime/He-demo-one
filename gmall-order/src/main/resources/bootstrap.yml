@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gmall-order
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 09fabd4e-fe4d-4ac0-a6ba-999505916843
+        group: dev
+        file-extension: yml

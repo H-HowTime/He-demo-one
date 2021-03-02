@@ -47,7 +47,7 @@ public class SpuDescController {
 
 
     /**
-     * 信息
+     * 根据spuId获取商品描述信息
      */
     @GetMapping("{spuId}")
     @ApiOperation("详情查询")

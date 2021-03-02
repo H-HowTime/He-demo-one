@@ -2,6 +2,8 @@ package com.atguigu.gmall.sms.controller;
 
 import java.util.List;
 
+import com.atguigu.gmall.sms.vo.ItemSaleVo;
+import com.atguigu.gmall.sms.vo.SkuSaleVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +36,23 @@ public class SkuBoundsController {
     @Autowired
     private SkuBoundsService skuBoundsService;
 
+
+    /**
+     * pms远程调用保存营销信息 feign远程调用只能通过Post请求接收json对象
+     */
+    @PostMapping("save/sale")
+    @ApiOperation("保存")
+    public ResponseVo<Object> saveSalesBySkuId(@RequestBody SkuSaleVo skuSaleVo) {
+        skuBoundsService.saveSalesBySkuId(skuSaleVo);
+        return ResponseVo.ok();
+    }
+
     /**
      * 列表
      */
     @GetMapping
     @ApiOperation("分页查询")
-    public ResponseVo<PageResultVo> querySkuBoundsByPage(PageParamVo paramVo){
+    public ResponseVo<PageResultVo> querySkuBoundsByPage(PageParamVo paramVo) {
         PageResultVo pageResultVo = skuBoundsService.queryPage(paramVo);
 
         return ResponseVo.ok(pageResultVo);
@@ -51,8 +64,8 @@ public class SkuBoundsController {
      */
     @GetMapping("{id}")
     @ApiOperation("详情查询")
-    public ResponseVo<SkuBoundsEntity> querySkuBoundsById(@PathVariable("id") Long id){
-		SkuBoundsEntity skuBounds = skuBoundsService.getById(id);
+    public ResponseVo<SkuBoundsEntity> querySkuBoundsById(@PathVariable("id") Long id) {
+        SkuBoundsEntity skuBounds = skuBoundsService.getById(id);
 
         return ResponseVo.ok(skuBounds);
     }
@@ -62,8 +75,8 @@ public class SkuBoundsController {
      */
     @PostMapping
     @ApiOperation("保存")
-    public ResponseVo<Object> save(@RequestBody SkuBoundsEntity skuBounds){
-		skuBoundsService.save(skuBounds);
+    public ResponseVo<Object> save(@RequestBody SkuBoundsEntity skuBounds) {
+        skuBoundsService.save(skuBounds);
 
         return ResponseVo.ok();
     }
@@ -73,8 +86,8 @@ public class SkuBoundsController {
      */
     @PostMapping("/update")
     @ApiOperation("修改")
-    public ResponseVo update(@RequestBody SkuBoundsEntity skuBounds){
-		skuBoundsService.updateById(skuBounds);
+    public ResponseVo update(@RequestBody SkuBoundsEntity skuBounds) {
+        skuBoundsService.updateById(skuBounds);
 
         return ResponseVo.ok();
     }
@@ -84,10 +97,20 @@ public class SkuBoundsController {
      */
     @PostMapping("/delete")
     @ApiOperation("删除")
-    public ResponseVo delete(@RequestBody List<Long> ids){
-		skuBoundsService.removeByIds(ids);
+    public ResponseVo delete(@RequestBody List<Long> ids) {
+        skuBoundsService.removeByIds(ids);
 
         return ResponseVo.ok();
+    }
+
+    /**
+     * 根据skuId获取促销信息-- 积分、打折、满减
+     */
+    @GetMapping("sku/{skuId}")
+    @ApiOperation("分页查询")
+    public ResponseVo<List<ItemSaleVo>> promotionBySkuId(@PathVariable("skuId") Long skuId) {
+        List<ItemSaleVo> itemSaleVos = skuBoundsService.promotionBySkuId(skuId);
+        return ResponseVo.ok(itemSaleVos);
     }
 
 }

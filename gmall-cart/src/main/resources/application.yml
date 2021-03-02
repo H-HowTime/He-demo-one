@@ -1,0 +1,63 @@
+server:
+  port: 18090
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+  redis:
+    host: 192.168.230.128
+    port: 6379
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.230.128:3306/guli_cart?useSSL=false
+    username: root
+    password: 123456Abc@
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    base-url: http://localhost:9411
+    sender:
+      type: web
+    discovery-client-enabled: false
+  thymeleaf:
+    cache: false
+  task: #\u914D\u7F6Espring task\u4F7F\u7528\u7684\u7EBF\u7A0B\u6C60\u4FE1\u606F
+    execution:
+      thread-name-prefix: cart-task- #\u914D\u7F6E\u7EBF\u7A0B\u540D\u7684\u524D\u7F00
+      pool:
+        core-size: 100
+        max-size: 500
+        queue-capacity: 1000
+        keep-alive: 60s
+        allow-core-thread-timeout: false #\u662F\u5426\u5141\u8BB8\u6838\u5FC3\u7EBF\u7A0B\u6570\u8FDB\u884C\u4F38\u7F29
+      shutdown:
+        await-termination: true #\u662F\u5426\u7B49\u5F85\u5F02\u6B65\u4EFB\u52A1\u6267\u884C\u5B8C\u518D\u5173\u95ED\u670D\u52A1\u5668 -- \u4F46\u8981\u6B63\u5E38\u7684\u5173\u95ED\u670D\u52A1\u5668
+        await-termination-period: 60 #\u7B49\u5F85\u7684\u65F6\u95F4
+  rabbitmq: #\u914D\u7F6Erabbitmq\u7684\u57FA\u7840\u4FE1\u606F
+    host: 192.168.230.128
+    port: 5672
+    virtual-host: /hehao
+    username: hexhao
+    password: hexhao
+    listener:
+      type: simple #\u5F00\u542F\u4E00\u4E2A\u65B0\u7EBF\u7A0B\u6765\u76D1\u542C\u6D88\u606F
+      simple:
+        prefetch: 1 #\u5F00\u542F\u80FD\u8005\u591A\u52B3\u6A21\u5F0F(\u516C\u5E73\u8F6C\u53D1)
+        concurrency: 8 #\u5F00\u542F\u591A\u7EBF\u7A0B\u6D88\u8D39\u6D88\u606F
+        acknowledge-mode: manual #\u8BBE\u7F6E\u624B\u52A8\u786E\u8BA4\u6D88\u606F
+feign:
+  sentinel:
+    enabled: true
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+logging:
+  level:
+    com.atguigu.gmall: debug #\u8F93\u51FAsql\u8BED\u53E5

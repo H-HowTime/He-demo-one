@@ -90,4 +90,45 @@ public class UserController {
         return ResponseVo.ok();
     }
 
+    /**
+     * 校验数据是否可用
+     */
+    @GetMapping("/check/{data}/{type}")
+    @ApiOperation("校验数据是否可用")
+    public ResponseVo<Boolean> checkData(@PathVariable("data") String data,@PathVariable("type") Integer type){
+         Boolean flag = userService.checkData(data,type);
+        return ResponseVo.ok(flag);
+    }
+
+    /**
+     * 发送短信验证码
+     */
+    @PostMapping("/code")
+    @ApiOperation("发送短信验证码")
+    public ResponseVo sendCode(@RequestParam("phone") String phone){
+        userService.sendCode(phone);
+        return ResponseVo.ok();
+    }
+
+    /**
+     * 注册用户
+     */
+    @PostMapping("/register")
+    @ApiOperation("注册用户")
+    public ResponseVo registerUser(UserEntity userEntity,@RequestParam("code")String code){
+        userService.registerUser(userEntity,code);
+        return ResponseVo.ok();
+    }
+
+    /**
+     * 查询用户
+     */
+    @GetMapping("/query")
+    @ApiOperation("查询用户")
+    public ResponseVo<UserEntity> queryUser(@RequestParam("loginName")String loginName,
+                                         @RequestParam("password")String password){
+        UserEntity userEntity =  userService.queryUser(loginName,password);
+        return ResponseVo.ok(userEntity);
+    }
+
 }

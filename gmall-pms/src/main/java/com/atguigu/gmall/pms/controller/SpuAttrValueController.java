@@ -39,7 +39,7 @@ public class SpuAttrValueController {
      */
     @GetMapping
     @ApiOperation("分页查询")
-    public ResponseVo<PageResultVo> querySpuAttrValueByPage(PageParamVo paramVo){
+    public ResponseVo<PageResultVo> querySpuAttrValueByPage(PageParamVo paramVo) {
         PageResultVo pageResultVo = spuAttrValueService.queryPage(paramVo);
 
         return ResponseVo.ok(pageResultVo);
@@ -51,8 +51,8 @@ public class SpuAttrValueController {
      */
     @GetMapping("{id}")
     @ApiOperation("详情查询")
-    public ResponseVo<SpuAttrValueEntity> querySpuAttrValueById(@PathVariable("id") Long id){
-		SpuAttrValueEntity spuAttrValue = spuAttrValueService.getById(id);
+    public ResponseVo<SpuAttrValueEntity> querySpuAttrValueById(@PathVariable("id") Long id) {
+        SpuAttrValueEntity spuAttrValue = spuAttrValueService.getById(id);
 
         return ResponseVo.ok(spuAttrValue);
     }
@@ -62,8 +62,8 @@ public class SpuAttrValueController {
      */
     @PostMapping
     @ApiOperation("保存")
-    public ResponseVo<Object> save(@RequestBody SpuAttrValueEntity spuAttrValue){
-		spuAttrValueService.save(spuAttrValue);
+    public ResponseVo<Object> save(@RequestBody SpuAttrValueEntity spuAttrValue) {
+        spuAttrValueService.save(spuAttrValue);
 
         return ResponseVo.ok();
     }
@@ -73,8 +73,8 @@ public class SpuAttrValueController {
      */
     @PostMapping("/update")
     @ApiOperation("修改")
-    public ResponseVo update(@RequestBody SpuAttrValueEntity spuAttrValue){
-		spuAttrValueService.updateById(spuAttrValue);
+    public ResponseVo update(@RequestBody SpuAttrValueEntity spuAttrValue) {
+        spuAttrValueService.updateById(spuAttrValue);
 
         return ResponseVo.ok();
     }
@@ -84,10 +84,19 @@ public class SpuAttrValueController {
      */
     @PostMapping("/delete")
     @ApiOperation("删除")
-    public ResponseVo delete(@RequestBody List<Long> ids){
-		spuAttrValueService.removeByIds(ids);
+    public ResponseVo delete(@RequestBody List<Long> ids) {
+        spuAttrValueService.removeByIds(ids);
 
         return ResponseVo.ok();
     }
 
+    @GetMapping("search/{spuId}")
+    @ApiOperation("详情查询")
+    public ResponseVo<List<SpuAttrValueEntity>> querySpuAttrValueBySpuIdAndCategoryId(
+            @PathVariable("spuId") Long spuId,
+            @RequestParam("categoryId") Long categoryId) {
+        List<SpuAttrValueEntity> spuAttrValueEntities = spuAttrValueService.querySpuAttrValueBySpuIdAndCategoryId(spuId,categoryId);
+
+        return ResponseVo.ok(spuAttrValueEntities);
+    }
 }

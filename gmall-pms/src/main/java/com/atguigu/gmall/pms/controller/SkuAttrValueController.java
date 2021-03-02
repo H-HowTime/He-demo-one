@@ -2,6 +2,8 @@ package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
 
+import com.atguigu.gmall.pms.entity.SpuAttrValueEntity;
+import com.atguigu.gmall.pms.vo.SaleAttrVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +54,7 @@ public class SkuAttrValueController {
     @GetMapping("{id}")
     @ApiOperation("详情查询")
     public ResponseVo<SkuAttrValueEntity> querySkuAttrValueById(@PathVariable("id") Long id){
-		SkuAttrValueEntity skuAttrValue = skuAttrValueService.getById(id);
+        SkuAttrValueEntity skuAttrValue = skuAttrValueService.getById(id);
 
         return ResponseVo.ok(skuAttrValue);
     }
@@ -88,6 +90,48 @@ public class SkuAttrValueController {
 		skuAttrValueService.removeByIds(ids);
 
         return ResponseVo.ok();
+    }
+
+    @GetMapping("search/{skuId}")
+    @ApiOperation("详情查询")
+    public ResponseVo<List<SkuAttrValueEntity>> querySkuAttrValueBySkuIdAndCategoryId(
+            @PathVariable("skuId") Long skuId,
+            @RequestParam("categoryId") Long categoryId) {
+        List<SkuAttrValueEntity> skuAttrValueEntities = skuAttrValueService.querySkuAttrValueBySkuIdAndCategoryId(skuId,categoryId);
+
+        return ResponseVo.ok(skuAttrValueEntities);
+    }
+
+    /**
+     * 根据spuId获取spu下的所有sku信息以及对应的规格参数值
+     */
+    @GetMapping("/sku/{spuId}")
+    @ApiOperation("详情查询")
+    public ResponseVo<List<SaleAttrVo>> querySaleAttrsBySpuId(@PathVariable("spuId") Long spuId) {
+        List<SaleAttrVo> saleAttrVos = this.skuAttrValueService.querySaleAttrsBySpuId(spuId);
+
+        return ResponseVo.ok(saleAttrVos);
+    }
+
+    /**
+     * 根据skuId获取对应的规格参数值
+     */
+    @GetMapping("/skuAttr/{skuId}")
+    @ApiOperation("详情查询")
+    public ResponseVo<List<SkuAttrValueEntity>> querySkuAttrValueBySkuId(@PathVariable("skuId") Long skuId) {
+        List<SkuAttrValueEntity> skuAttrValueEntityList = this.skuAttrValueService.querySkuAttrValueBySkuId(skuId);
+        return ResponseVo.ok(skuAttrValueEntityList);
+    }
+
+    /**
+     * 根据spuId获取所有对应的sku规格参数值和skuid的映射关系{黑色、8G、128G:8}
+     */
+    @GetMapping("/skuAttrMappingSkuId/{spuId}")
+    @ApiOperation("详情查询")
+    public ResponseVo<String> querySkuAttrMappingSkuId(@PathVariable("spuId") Long spuId) {
+        String mapping =  this.skuAttrValueService.querySkuAttrMappingSkuId(spuId);
+        System.out.println(mapping);
+        return ResponseVo.ok(mapping);
     }
 
 }

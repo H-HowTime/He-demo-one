@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gmall-auth
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: a1aa2e8c-efd5-47ba-a0c1-7885764f8068
+        group: dev
+        file-extension: yml

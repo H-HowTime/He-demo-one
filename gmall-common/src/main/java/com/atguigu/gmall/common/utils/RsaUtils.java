@@ -21,7 +21,7 @@ public class RsaUtils {
     }
 
     /**
-     * 从文件中读取密钥
+     * 从文件中读取私钥
      *
      * @param filename 私钥保存路径，相对于classpath
      * @return 私钥对象
