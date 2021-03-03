@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gmall-cart
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: e40e2777-5bcb-4f8b-ac83-176a70a46401
+        group: dev
+        file-extension: yml

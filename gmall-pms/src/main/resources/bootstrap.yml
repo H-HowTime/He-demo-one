@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gmall-pms
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: aa5d780d-7044-4093-a405-7c97ee5a97cb
+        group: dev
+        file-extension: yml

@@ -1,0 +1,47 @@
+server:
+  port: 18093
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: loaclhost:8080
+        port: 8719
+  redis:
+    host: 192.168.230.128
+    port: 6379
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    base-url: http://localhost:9411
+    sender:
+      type: web
+    discovery-client-enabled: false
+  datasource:
+    url: jdbc:mysql://192.168.230.128:3306/guli_payment?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 123456Abc@
+    username: root
+  thymeleaf:
+    cache: false
+  rabbitmq:
+    host: 192.168.230.128
+    port: 5672
+    username: hexhao
+    password: hexhao
+    virtual-host: /hehao
+    publisher-confirm-type: correlated
+    publisher-returns: true
+feign:
+  sentinel:
+    enabled: true
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+logging:
+  level:
+    com.atguigu.gmall: debug

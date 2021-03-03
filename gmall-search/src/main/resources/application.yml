@@ -1,0 +1,39 @@
+server:
+  port: 18086
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+  zipkin:
+    base-url: http://localhost:9411
+    enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  elasticsearch:
+    rest:
+      uris: http://192.168.230.128:9200
+  jackson:
+    default-property-inclusion: non_null #数据通过@ResponseBady注解序列化为json字符串底层使用的是Jackson，此配置可以排除掉为null的字段
+  rabbitmq: #配置rabbitmq基本属性
+    host: 192.168.230.128
+    port: 5672
+    virtual-host: /hehao
+    username: hexhao
+    password: hexhao
+    listener:
+      simple:
+        concurrency: 8 #配置多线程消费消息
+        prefetch: 1 #配置能者多劳/公平转发：每次只获取一条消息，确认之后在进行下一条消息
+        acknowledge-mode: manual #配置消费者确认类型 -- 手动确认
+      type: simple #默认即为simple simple类型的监听器会另开线程消费消息
+feign:
+  sentinel:
+    enabled: true
